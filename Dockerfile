@@ -55,7 +55,6 @@ RUN wget https://services.gradle.org/distributions/gradle-"$GRADLE_VERSION"-bin.
     rm -rf gradle-"$GRADLE_VERSION"-bin.zip
 
 # Setup environment
-
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:/opt/tools:/opt/gradle/gradle-"$GRADLE_VERSION"/bin
 
 # Install sdk elements
