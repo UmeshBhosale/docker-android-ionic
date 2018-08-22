@@ -35,7 +35,7 @@ USER user
 WORKDIR /home/user
 
 # Download Android SDK
-RUN mkdir $ANDROID_HOME .android \
+RUN mkdir $ANDROID_HOME \
  && cd $ANDROID_HOME \
  && curl -o sdk.zip $SDK_URL \
  && unzip sdk.zip \
