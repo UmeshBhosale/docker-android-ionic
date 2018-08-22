@@ -23,41 +23,35 @@ RUN apt-get update &&  \
     # git config --global user.name "umesh_b" && \
     # ionic start myApp sidemenu --no-interactive
 
-# ANDROID
-# Set up environment variables
-ENV ANDROID_HOME="/home/user/android-sdk-linux" \
-    SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip" \
-    GRADLE_URL="https://services.gradle.org/distributions/gradle-4.5.1-all.zip"
-
-# Create a non-root user
-RUN useradd -m user
-USER user
-WORKDIR /home/user
-
-# Download Android SDK
-RUN mkdir $ANDROID_HOME \
- && cd $ANDROID_HOME \
- && curl -o sdk.zip $SDK_URL \
- && unzip sdk.zip \
- && rm sdk.zip \
- && yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
-
-# Install Gradle
-RUN wget $GRADLE_URL -O gradle.zip \
- && unzip gradle.zip \
- && mv gradle-4.5.1 gradle \
- && rm gradle.zip \
- && mkdir .gradle
-
 #JAVA
 RUN apt-get update && apt-get install -y -q python-software-properties software-properties-common  && \
     add-apt-repository ppa:webupd8team/java -y && \
     echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
     apt-get update && apt-get -y install oracle-java8-installer
+    
+# Install Gradle
+RUN wget https://services.gradle.org/distributions/gradle-"$GRADLE_VERSION"-bin.zip && \
+    mkdir /opt/gradle && \
+    unzip -d /opt/gradle gradle-"$GRADLE_VERSION"-bin.zip && \
+    rm -rf gradle-"$GRADLE_VERSION"-bin.zip
 
-# Set up environment variables
-ENV PATH="/home/user/gradle/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}"
+# Install Android SDK
+RUN cd /opt && wget --output-document=android-sdk.tgz --quiet \
+    http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz \
+    && tar xzf android-sdk.tgz && rm -f android-sdk.tgz \
+    && chown -R root.root android-sdk-linux
 
+# Setup environment
+ENV ANDROID_HOME /opt/android-sdk-linux
+ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+
+# Install sdk elements
+COPY tools /opt/tools
+ENV PATH ${PATH}:/opt/tools
+RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+
+# Cleaning
+RUN apt-get clean
 RUN android update sdk --no-ui --filter extra-android-support,extra-google-m2repository,extra-android-m2repository
 RUN android update sdk --no-ui --filter build-tools-24.0.0,android-24
 RUN android update sdk --no-ui --filter build-tools-26.0.0,android-26
