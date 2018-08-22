@@ -58,9 +58,9 @@ RUN wget https://services.gradle.org/distributions/gradle-"$GRADLE_VERSION"-bin.
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:/opt/tools:/opt/gradle/gradle-"$GRADLE_VERSION"/bin
 
 # Install sdk elements
-# COPY tools /opt/tools
-WORKDIR tools
-COPY /opt/tools
+COPY ./tools /opt/tools
+# WORKDIR tools
+# COPY /opt/tools
 
 RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --no-ui --filter platform-tools,tools,build-tools-26.0.0,android-26,build-tools-25.0.0,android-25,extra-android-support,extra-android-m2repository,extra-google-m2repository"]
 RUN unzip ${ANDROID_HOME}/temp/*.zip -d ${ANDROID_HOME}
