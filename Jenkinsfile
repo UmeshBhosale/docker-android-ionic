@@ -3,23 +3,25 @@ node {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-        sh 'git clone git@git.tekdi.net:umesh_b/es-automation.git'
+        // sh 'git clone git@git.tekdi.net:umesh_b/es-automation.git'
         checkout scm
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app = docker.build("umeshbhosale/docker-ionic-build-automation")
+        // app = docker.build("umeshbhosale/docker-ionic-build-automation")
+        
+        sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
     }
 
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
-        app.inside {
+        /*app.inside {
             sh 'echo "Tests passed"'
-        }
+        }*/
     }
 
     /*stage('Push image') {
