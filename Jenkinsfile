@@ -10,9 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        // app = docker.build("umeshbhosale/docker-ionic-build-automation")
-        
-        sh 'docker build -t umeshbhosale/docker-android-ionic .'
+        app = docker.build("umeshbhosale/docker-ionic-build-automation")
     }
 
     stage('Test image') {
