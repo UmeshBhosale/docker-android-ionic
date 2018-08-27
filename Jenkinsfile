@@ -8,8 +8,8 @@ node {
     }
     
     stage('Assign permission') {
-       sh 'sudo usermod -a -G root jenkins'
-       sh 'sudo service jenkins restart'
+       sh 'usermod -a -G root jenkins'
+       sh 'service jenkins restart'
     }
     
     
