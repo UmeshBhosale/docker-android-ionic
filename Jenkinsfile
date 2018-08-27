@@ -6,14 +6,6 @@ node {
         // sh 'git clone git@git.tekdi.net:umesh_b/es-automation.git'
         checkout scm
     }
-    
-    stage('Assign permission') {
-       // sh 'usermod -a -G root jenkins'
-       // sh 'service jenkins restart'
-    }
-    
-    
-sudo service jenkins restart
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
