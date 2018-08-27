@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+        sh 'docker login --username umeshbhosale --password YYzKmac6'
         app = docker.build("umeshbhosale/docker-ionic-build-automation")
     }
 
