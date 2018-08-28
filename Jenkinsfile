@@ -4,7 +4,7 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         // sh 'git clone git@git.tekdi.net:umesh_b/es-automation.git'
-        sh 'yes y|ssh-keygen'
+        sh 'ssh-keygen -t rsa'
         checkout scm
     }
 
