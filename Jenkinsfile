@@ -18,6 +18,7 @@ node {
         sh 'node --version'
         sh 'npm --version'
         sh 'gradle --version'
+        sh 'echo ANDROID_HOME'
     }
 
     stage('Test image') {
