@@ -18,7 +18,6 @@ node {
         sh 'node --version'
         sh 'npm --version'
         sh 'gradle --version'
-        sh 'android'
     }
 
     stage('Test image') {
