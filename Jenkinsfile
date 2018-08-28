@@ -3,7 +3,7 @@ node {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-        // sh 'git clone https://git.tekdi.net/umesh_b/es-automation.git'
+        sh 'git clone https://git.tekdi.net/umesh_b/es-automation.git'
         checkout scm
     }
 
@@ -12,7 +12,7 @@ node {
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
-        sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
+        // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
         // sh 'ionic --version'
         // sh 'cordova --version'
         // sh 'node --version'
