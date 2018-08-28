@@ -3,22 +3,23 @@ node {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-        sh 'git clone https://git.tekdi.net/umesh_b/es-automation.git'
+        // sh 'git clone https://git.tekdi.net/umesh_b/es-automation.git'
         checkout scm
     }
 
-    // stage('Build image') {
+    stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
-        /*sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
-        sh 'ionic --version'
-        sh 'cordova --version'
-        sh 'node --version'
-        sh 'npm --version'
-        sh 'gradle --version'
-    }*/
+        sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
+        // sh 'ionic --version'
+        // sh 'cordova --version'
+        // sh 'node --version'
+        // sh 'npm --version'
+        // sh 'gradle --version'
+        sh 'ls'
+    }
 
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
