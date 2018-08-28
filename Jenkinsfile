@@ -14,6 +14,10 @@ node {
         
         sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
         sh 'ionic --version'
+        sh 'cordova --version'
+        sh 'node --version'
+        sh 'npm --version'
+        sh 'gradle --version'
     }
 
     stage('Test image') {
