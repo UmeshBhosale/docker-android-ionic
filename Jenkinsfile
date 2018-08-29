@@ -20,7 +20,7 @@ node {
        
         sh 'mkdir umesh'
         sh 'cd umesh'
-        sh 'rm -rf build'
+        // sh 'rm -rf build'
         //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
         sh 'ls'
         
