@@ -9,7 +9,7 @@ node {
         sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         sh 'cd'
         sh 'ls'
-        sh 'cat /var/lib/jenkins/.ssh/id_rsa'
+        sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
         checkout scm
     }
 
