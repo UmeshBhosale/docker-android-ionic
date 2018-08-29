@@ -19,9 +19,10 @@ node {
         // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
        
         
-        sh 'cp -R $WORKSPACE/es-automation/es-app $WORKSPACE'
-        sh 'rm -rf es-automation'
+        //sh 'cp -R $WORKSPACE/es-automation/es-app $WORKSPACE'
+        //sh 'rm -rf es-automation'
         //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
+        sh 'cd $WORKSPACE/es-automation/es-automation-master'
         sh 'ls'
         
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
