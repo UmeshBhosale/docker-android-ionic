@@ -21,10 +21,10 @@ node {
         
         // sh 'cp -R $WORKSPACE/es-automation/ $WORKSPACE/Pipelined'
         sh 'rm -rf node_modules'
-        cd es-automation
+        sh 'cd es-automation/'
         //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
         //sh '$WORKSPACE = $WORKSPACE/es-automation/es-automation-master'
-        sh 'cd Pipelined'
+        
         
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
         sh 'ls'
