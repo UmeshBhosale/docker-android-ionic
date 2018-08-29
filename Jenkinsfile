@@ -14,7 +14,7 @@ node {
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
-        sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
+        sh 'docker build -t umeshbhosale/docker-android-ionic .'
         sh 'ionic --version'
         sh 'cordova --version'
         sh 'node --version'
