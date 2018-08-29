@@ -12,13 +12,13 @@ node {
     }
 
     stage('Build image') {
-        sh '$path=$(pwd)'
+        sh 'path=$(pwd)'
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
         sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
-        sh 'cd $path/es-automation/es-app'
+        cd $path/es-automation/es-app
         sh 'ls'
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
         // sh 'ls'
