@@ -20,8 +20,8 @@ node {
        
         sh 'rm -rf umesh'
         //sh 'mkdir umesh'
-        sh 'cd es-automation/es-app'
-        sh 'npm install'
+        sh 'cd es-automation'
+        sh 'pwd'
         
         //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
         sh 'ls'
