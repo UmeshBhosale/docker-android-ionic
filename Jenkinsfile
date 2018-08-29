@@ -25,6 +25,7 @@ node {
         //sh '$WORKSPACE = $WORKSPACE/es-automation/es-automation-master'
         //sh 'cd $WORKSPACE/es-automation/es-automation-master'
         sh 'ls'
+        sh 'echo $WORKSPACE'
         
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
         // sh 'ls'
