@@ -6,7 +6,7 @@ node {
         // sh 'git clone git@git.tekdi.net:umesh_b/es-automation.git'
         // sh 'ssh-keygen -t dsa -N "my passphrase" -C "test key" -f mykey'
         // sh 'ssh-keygen -t rsa -N "" -C "" -f rsa_id'
-        sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
+        //sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         sh 'cd'
         sh 'ls'
         sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
