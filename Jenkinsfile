@@ -21,6 +21,7 @@ node {
         
         // sh 'cp -R $WORKSPACE/es-automation/ $WORKSPACE/Pipelined'
         sh 'rm -rf node_modules'
+        sh 'rm -rf Pipelined'
         sh 'cd es-automation/'
         //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
         //sh '$WORKSPACE = $WORKSPACE/es-automation/es-automation-master'
@@ -28,7 +29,7 @@ node {
         
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
         sh 'ls'
-        sh 'npm install'
+        //sh 'npm install'
         // sh 'ionic cordova platform add android@6.3.0'
         // sh 'ionic cordova platform ls'
         
