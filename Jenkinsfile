@@ -14,13 +14,13 @@ node {
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
-        // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
-        // sh 'ionic --version'
-        // sh 'cordova --version'
-        // sh 'node --version'
-        // sh 'npm --version'
-        // sh 'gradle --version'
-        sh 'ls'
+        sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
+        sh 'ionic --version'
+        sh 'cordova --version'
+        sh 'node --version'
+        sh 'npm --version'
+        sh 'gradle --version'
+        // sh 'ls'
     }
 
     stage('Test image') {
