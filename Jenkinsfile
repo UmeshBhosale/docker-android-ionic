@@ -19,15 +19,15 @@ node {
         // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
        
         
-        sh 'cp -R $WORKSPACE/es-automation/ $WORKSPACE/Pipelined'
-        sh 'rm -rf es-automation'
+        // sh 'cp -R $WORKSPACE/es-automation/ $WORKSPACE/Pipelined'
+        sh 'rm -rf node_modules'
         //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
         //sh '$WORKSPACE = $WORKSPACE/es-automation/es-automation-master'
-        //sh 'cd $WORKSPACE/es-automation/es-automation-master'
+        sh 'cd Pipelined'
         
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
-        // sh 'ls'
-        // sh 'npm install'
+        sh 'ls'
+        sh 'npm install'
         // sh 'ionic cordova platform add android@6.3.0'
         // sh 'ionic cordova platform ls'
         
