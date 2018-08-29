@@ -4,11 +4,9 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         sh 'git clone git@git.tekdi.net:umesh_b/es-automation.git'
-        // sh 'ssh-keygen -t dsa -N "my passphrase" -C "test key" -f mykey'
-        // sh 'ssh-keygen -t rsa -N "" -C "" -f rsa_id'
-        //sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
-        // sh 'cd'
-        // sh 'ls'
+
+        /* Generates the ssh key for Jenkin*/
+        // sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
         checkout scm
     }
@@ -18,7 +16,8 @@ node {
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
-        // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
+        sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
+        sh 'ls'
         // sh 'ionic --version'
         // sh 'cordova --version'
         // sh 'node --version'
