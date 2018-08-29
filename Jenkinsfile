@@ -12,8 +12,7 @@ node {
     }
 
     stage('Build image') {
-        sh 'path=$(pwd)'
-        sh 'echo $path'
+        sh '$path=$(pwd)'
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
