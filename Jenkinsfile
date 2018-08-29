@@ -18,7 +18,15 @@ node {
         
         // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
         sh 'cp -R /var/lib/jenkins/workspace/Pipelined/es-automation build'
+        sh 'rm -rf mykey'
+        sh 'rm -rf mykey.pub'
+        sh 'rm -rf README.md'
+        sh 'rm -rf rsa_id'
+        sh 'rm -rf rsa_id.pub'
+        sh 'rm -rf rsa_id.pub'
+        sh 'rm -rf rsa_id.pub'
         sh 'ls'
+        
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
         // sh 'ls'
         // sh 'npm install'
