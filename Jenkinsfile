@@ -17,11 +17,13 @@ node {
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
         sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
-        sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
+        sh 'pwd'
         sh 'ls'
-        sh 'npm install'
-        sh 'ionic cordova platform add android@6.3.0'
-        sh 'ionic cordova platform ls'
+        // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
+        // sh 'ls'
+        // sh 'npm install'
+        // sh 'ionic cordova platform add android@6.3.0'
+        // sh 'ionic cordova platform ls'
         
         // sh 'ionic --version'
         // sh 'cordova --version'
