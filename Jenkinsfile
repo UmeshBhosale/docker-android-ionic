@@ -17,14 +17,9 @@ node {
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
         
         // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
-        sh 'cp -R /var/lib/jenkins/workspace/Pipelined/es-automation build'
-        sh 'rm -rf mykey'
-        sh 'rm -rf mykey.pub'
-        sh 'rm -rf README.md'
-        sh 'rm -rf rsa_id'
-        sh 'rm -rf rsa_id.pub'
-        sh 'rm -rf rsa_id.pub'
-        sh 'rm -rf rsa_id.pub'
+       
+        sh 'rm -rf build'
+        sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
         sh 'ls'
         
         // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
