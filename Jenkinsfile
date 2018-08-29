@@ -18,11 +18,9 @@ node {
         
         // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
        
-        sh 'rm -rf umesh'
-        //sh 'mkdir umesh'
-        sh 'cd es-automation'
-        sh 'pwd'
         
+        sh 'cp -R $WORKSPACE/es-automation/es-app $WORKSPACE'
+        sh 'rm -rf es-automation'
         //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
         sh 'ls'
         
