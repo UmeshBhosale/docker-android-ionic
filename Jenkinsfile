@@ -10,7 +10,7 @@ node {
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
         sh 'pwd'
         sh 'android list sdk --all'
-        sh 'echo y| android update sdk --no-ui android-24'
+        sh 'echo y| android update sdk android-24'
         sh 'echo y| android update sdk --no-ui build-tools-24.0.0'
      
         checkout scm
