@@ -9,7 +9,7 @@ node {
         // sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
         sh 'pwd'
-        sh 'echo y | android update sdk --no-ui --filter build-tools-26.0.0,android-26'
+        sh 'android update sdk --no-ui'
         checkout scm
     }
 
