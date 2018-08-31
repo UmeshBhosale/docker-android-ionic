@@ -8,6 +8,10 @@ node {
         /* Generates the ssh key for Jenkin*/
         // sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
+        sh 'pwd'
+        sh 'cd'
+        cd 'android-sdk-linux'
+        sh 'echo y | android update sdk --no-ui --filter build-tools-26.0.0,android-26'
         checkout scm
     }
 
@@ -15,30 +19,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         // app = docker.build("umeshbhosale/docker-ionic-build-automation")
-        
         // sh 'sudo docker build -t umeshbhosale/docker-android-ionic .'
-       
-        
-        // sh 'cp -R $WORKSPACE/es-automation/ $WORKSPACE/Pipelined'
-        sh 'rm -rf node_modules'
-        sh 'rm -rf Pipelined'
-        sh 'cd es-automation/'
-        //sh 'alias build="cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app"'
-        //sh '$WORKSPACE = $WORKSPACE/es-automation/es-automation-master'
-        
-        
-        // sh 'cd /var/lib/jenkins/workspace/Pipelined/es-automation/es-app'
-        sh 'ls'
-        //sh 'npm install'
-        // sh 'ionic cordova platform add android@6.3.0'
-        // sh 'ionic cordova platform ls'
-        
-        // sh 'ionic --version'
-        // sh 'cordova --version'
-        // sh 'node --version'
-        // sh 'npm --version'
-        // sh 'gradle --version'
-        // sh 'ls'
     }
 
     stage('Test image') {
