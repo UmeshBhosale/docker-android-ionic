@@ -10,7 +10,7 @@ node {
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
         sh 'pwd'
         sh 'android list sdk --all'
-        sh 'echo y | android update sdk --filter tools,platform-tools,build-tools-19.0.3'
+        sh 'echo y | android update sdk --no-ui --filter build-tools-26.0.0'
      
         checkout scm
     }
