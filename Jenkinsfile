@@ -6,9 +6,7 @@ node {
         /* Generates the ssh key for Jenkin*/
         // sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
-        sh 'pwd'
-        sh 'cd'
-        sh 'echo y | android update sdk --no-ui --filter platform-tools,tools'
+        sh 'sudo echo y | android update sdk --no-ui --filter platform-tools,tools'
         checkout scm
     }
 
