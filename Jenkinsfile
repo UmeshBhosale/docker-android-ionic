@@ -7,9 +7,7 @@ node {
         // sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
         sh 'pwd'
-        sh 'cd opt'
-        sh 'pwd'
-        sh 'ls'
+        sh 'cd'
         sh 'android list sdk --all'
         sh 'echo y | android update sdk --no-ui --filter platform-tools,tools'
         checkout scm
