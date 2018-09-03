@@ -1,7 +1,5 @@
 node {
-    def app
-
-    stage('Clone repository') {
+    stage('Update SDK') {
         /* Let's make sure we have the repository cloned to our workspace */
         // sh 'git clone git@git.tekdi.net:umesh_b/es-automation.git'
 
@@ -9,9 +7,9 @@ node {
         // sh 'ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/id_rsa -q -P ""'
         // sh 'cat /var/lib/jenkins/.ssh/id_rsa.pub'
         sh 'pwd'
-        sh 'echo y | android update sdk --no-ui --filter platform-tools,tools'
+        sh 'cd'
         sh 'android list sdk --all'
-        
+        sh 'echo y | android update sdk --no-ui --filter platform-tools,tools'
         checkout scm
     }
 
